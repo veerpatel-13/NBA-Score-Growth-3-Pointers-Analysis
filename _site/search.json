@@ -1,0 +1,9 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "NBA Score Growth and 3 Point Analysis",
+    "section": "",
+    "text": "The NBA score has grew in past years a big reason is due to the change in field goal percentage and ratios in three point shooting. The data for this analysis was sourced from a comprehensive NBA dataset on Kaggle. The dataset includes game statistics and player details, which helped gather an in-depth analysis of score growth and 3-point shooting trends over the years. Data cleaning involved filtering relevant seasons and ensuring consistent, thorough, and true formats for variables. Key variables such as game scores and 3-point attempts were measured in points and attempts per game to help uncover trends and correlations. I had loaded the dataset “path/to/nba_dataset.csv” as nba data, and used nba_cleaned to clean unnecessary data. In today’s game of basketball, athletes are shooting more threes and making more threes than in the past, by a lot."
+  }
+]

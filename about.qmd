@@ -1,0 +1,17 @@
+---
+title: "About"
+---
+
+Hi my name is Veer Patel from Illinois, and I enjoy the game of basketball. I am currently in the 10th grade and my hobbies are listening to music, playing sports, and hanging out with my friends. 
+
+https://github.com/veerpatel-13
+
+Contact: veerpat1017@gmail.com
+
+My project is about the growth in NBA scores and a analysis about three point field goal. 
+
+Repo: https://github.com/veerpatel-13/NBA-Score-Growth-3-Pointers-Analysis 
+
+This project was created as a part of Kane’s Data Science Bootcamp. 
+
+https://bootcamp.davidkane.info/.

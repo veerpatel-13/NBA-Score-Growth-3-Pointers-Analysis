@@ -1,0 +1,32 @@
+---
+title: "NBA Score Growth and 3 Point Analysis"
+author: "Veer Patel"
+format: html
+---
+
+```{r}
+#|message: false
+#|echo: false
+library(dplyr)
+library(ggplot2)
+library(readr)
+```
+
+```{r}
+nba_data <- read_csv("nba_data.csv")
+nba_cleaned <- nba_data|>
+  filter(season >= 2000) |>
+  mutate(
+    game_date = as.Date(game_date, format="%Y-%m-%d"),
+    points_per_game = total_points / games_played,
+    three_pointers_per_game = three_pointers_made / games_played
+  )
+summary(nba_cleaned)
+ggplot(nba_cleaned, aes(x = season)) +
+  geom_line(aes(y = points_per_game, color = "Points Per Game")) +
+  geom_line(aes(y = three_pointers_per_game, color = "3-Pointers Per Game")) +
+  labs(title = "NBA Score Growth and 3-Pointers Analysis",
+       x = "Season",
+       y = "Average per Game") +
+  scale_color_manual(values = c("Points Per Game" = "blue", "3-Pointers Per Game" = "red"))
+```
