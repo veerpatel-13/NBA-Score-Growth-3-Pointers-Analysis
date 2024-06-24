@@ -5,23 +5,31 @@ format: html
 ---
 
 ```{r}
-#|message: false
-#|echo: false
+#| message: false
+#| echo: true
 library(dplyr)
 library(ggplot2)
 library(readr)
-```
 
-```{r}
+# Read the dataset
 nba_data <- read_csv("nba_data.csv")
-nba_cleaned <- nba_data|>
-  filter(season >= 2000) |>
-  mutate(
+
+# Print column names and the first few rows to verify them
+print(names(nba_data))
+print(head(nba_data))
+
+# Adjust based on actual column names
+nba_cleaned <- nba_data %>%
+   mutate(
     game_date = as.Date(game_date, format="%Y-%m-%d"),
     points_per_game = total_points / games_played,
     three_pointers_per_game = three_pointers_made / games_played
   )
+
+# Summary of cleaned data
 summary(nba_cleaned)
+
+# Plotting the data
 ggplot(nba_cleaned, aes(x = season)) +
   geom_line(aes(y = points_per_game, color = "Points Per Game")) +
   geom_line(aes(y = three_pointers_per_game, color = "3-Pointers Per Game")) +

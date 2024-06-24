@@ -5,30 +5,4 @@ author: "Veer Patel"
 
 The NBA score has grew in past years a big reason is due to the change in field goal percentage and ratios in three point shooting. The data for this analysis was sourced from a comprehensive NBA dataset on Kaggle. The dataset includes game statistics and player details, which helped gather an in-depth analysis of score growth and 3-point shooting trends over the years. Data cleaning involved filtering relevant seasons and ensuring consistent, thorough, and true formats for variables. Key variables such as game scores and 3-point attempts were measured in points and attempts per game to help uncover trends and correlations. I had loaded the dataset "path/to/nba_dataset.csv" as nba data, and used nba_cleaned to clean unnecessary data. In today's game of basketball, athletes are shooting more threes and making more threes than in the past, by a lot. 
 
-```{r setup, message = false, warning = false}
-library(dplyr)
-library(ggplot2)
-library(readr)
-```
-
-```{r}
-nba_data <- read_csv("nba_data.csv")
-nba_cleaned <- nba_data|>
-  filter(season >= 2000) |>
-  mutate(
-    game_date = as.Date(game_date, format="%Y-%m-%d"),
-    points_per_game = total_points / games_played,
-    three_pointers_per_game = three_pointers_made / games_played
-  )
-summary(nba_cleaned)
-ggplot(nba_cleaned, aes(x = season)) +
-  geom_line(aes(y = points_per_game, color = "Points Per Game")) +
-  geom_line(aes(y = three_pointers_per_game, color = "3-Pointers Per Game")) +
-  labs(title = "NBA Score Growth and 3-Pointers Analysis",
-       x = "Season",
-       y = "Average per Game") +
-  scale_color_manual(values = c("Points Per Game" = "blue", "3-Pointers Per Game" = "red"))
-```
-
- 
 
